@@ -1,0 +1,20 @@
+[user]
+  name = Ananth Kamath
+  email = ananth.atg@google.com
+[pull]
+  rebase = true
+[push]
+  default = current
+[rebase]
+  autosquash = true
+  autostash = true
+[github]
+  user = ananthkamath
+[rerere]
+  enabled = true
+[core]
+  excludesfile = ~/.gitignore_global
+[commit]
+  template = ~/.gitmessage
+[color]
+  ui = true
