@@ -1,22 +1,19 @@
 version: "3"
 
-volumes:
-  db-data:
-    external: false
-
 services:
   db:
     image: postgres
-    env_file: .env
+    environment:
+      POSTGRES_PASSWORD: mysecretpass
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
 
   app:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 5000 -b '0.0.0.0'"
-    env_file: .env
     volumes:
       - .:/app
+      - /app/node_modules
     ports:
       - "5000:5000"
     depends_on:
