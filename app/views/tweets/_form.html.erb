@@ -12,11 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <div class="control">
+      <%= form.text_area :content, class:"input" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field is-grouped">
+    <div class="control">
+      <%= form.submit class:"button is-info" %>
+    </div>
+    <div class="control">
+      <%= link_to 'Back', tweets_path, class:"button is-info is-outlined" %>
+    </div>
   </div>
 <% end %>
