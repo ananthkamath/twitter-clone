@@ -1,16 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "tweets/index", type: :view do
-  before(:each) do
-    assign(:tweets, [
-      Tweet.create!(
-        :content => "MyText"
-      ),
-      Tweet.create!(
-        :content => "MyText"
-      )
-    ])
-  end
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:tweet1) { FactoryBot.create(:tweet, user: user)}
+  let!(:tweet2) { FactoryBot.create(:tweet, user: user)}
 
   it "renders a list of tweets" do
     render
