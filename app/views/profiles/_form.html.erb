@@ -1,0 +1,74 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(tweet.errors.count, 'error') %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Name</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <%= form.text_field :name, class:'input' %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Handle</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <%= form.text_field :handle, class:'input' %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Bio</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <%= form.text_field :bio, class:'input' %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Location</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <%= form.text_field :location, class:'input' %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-left:45%">
+    <div class="field is-grouped centered">
+      <div class="control">
+        <%= form.submit 'Save', class:'button is-info' %>
+      </div>
+      <div class="control">
+        <%= link_to 'Back', tweets_path, class:'button is-info is-outlined' %>
+      </div>
+    </div>
+  </div>
+<% end %>
