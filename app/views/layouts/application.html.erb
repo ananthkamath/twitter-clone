@@ -44,7 +44,11 @@
     <div style="display: flex;">
       <div style="margin-top: 1.5%; float: left; width: 25%; padding-right: 1%; padding-left: 1%">
         <% unless current_user.nil? %>
-          <%= render './profiles/show' %>
+          <% if current_user.profile.nil? || !current_user.profile.persisted? %>
+            <%= render './profiles/default' %>
+          <% else %>
+            <%= render './profiles/show' %>
+          <% end %>
         <% end %>
       </div>
       <div style="margin-top: 1.5%; float: left; width: 50%; padding-right: 1%">
