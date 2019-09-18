@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'likes/toggle'
   devise_for :users
   resources :tweets
   resources :profiles, only: [:show, :new, :edit, :create, :update]

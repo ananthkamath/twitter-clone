@@ -13,7 +13,8 @@
 
   <div class="field">
     <div class="control">
-      <%= form.text_area :content, class:'input' %>
+      <%= form.rich_text_area :content, class:'input' %>
+      <%= form.hidden_field :type, class:'tweet' %>
     </div>
   </div>
 
