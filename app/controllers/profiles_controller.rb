@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to tweets_path, notice: 'Profile was successfully created.' }
+        format.html { redirect_to user_profile_path, notice: 'Profile was successfully created.' }
       else
         format.html { render :new }
       end
@@ -27,9 +27,9 @@ class ProfilesController < ApplicationController
 
   def update
     respond_to do |format|
-      @profile.avatar.attach(params[:avatar])
+      @profile.avatar.attach(params[:avatar]) if params[:avatars]
       if @profile.update(profile_params)
-        format.html { redirect_to tweets_path, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to user_profile_path, notice: 'Profile was successfully updated.' }
       else
         format.html { render :edit }
       end

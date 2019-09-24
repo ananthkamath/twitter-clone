@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'home', to: 'pages#home'
+  get 'user_profile', to: 'pages#profile'
+  get 'explore', to: 'pages#explore'
+  get 'notifications', to: 'pages#notifications'
+  get 'messages', to: 'pages#messages'
   post 'likes/toggle'
   devise_for :users
   resources :tweets
   resources :profiles, only: [:show, :new, :edit, :create, :update]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'tweets#index'
+  root to: 'pages#home'
 end

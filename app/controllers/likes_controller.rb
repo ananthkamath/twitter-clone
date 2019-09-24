@@ -1,9 +1,6 @@
 class LikesController < ApplicationController
   before_action :like_exists
   def toggle
-    Rails.logger.info('*'*100)
-    Rails.logger.info(@like)
-    Rails.logger.info('*'*100)
     if @like.nil?
       like
     else
@@ -20,25 +17,21 @@ class LikesController < ApplicationController
   def like
     @like = Like.new(like_params)
     if @like.save
-      redirect_to tweets_path
+      redirect_to home_path
     else
-      redirect_to tweets_path
+      redirect_to home_path
     end
   end
 
   def unlike
     if @like.destroy
-      redirect_to tweets_path
+      redirect_to home_path
     else
-      redirect_to tweets_path
+      redirect_to home_path
     end
   end
 
   def like_exists
-    Rails.logger.info('*'*100)
-    Rails.logger.info(params[:user_id])
-    Rails.logger.info(params[:tweet_id])
-    Rails.logger.info('*'*100)
     @like = Like.find_by(user_id: like_params[:user_id], tweet_id: like_params[:tweet_id])
   end
 end
