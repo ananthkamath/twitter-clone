@@ -1,0 +1,12 @@
+<% @tweets.each do |tweet| %>
+  <div class="card">
+    <div class="card-content">
+      <%= tweet.content %>
+    </div>
+    <footer class="card-footer">
+      <%= link_to tweet.likes.count.to_s + ' Likes', likes_toggle_path(like: { user_id: current_user.id, tweet_id: tweet.id }), method: :post , class:"card-footer-item" %>
+      <%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-footer-item" %>
+    </footer>
+  </div>
+  </br>
+<% end %>

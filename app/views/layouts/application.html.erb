@@ -10,37 +10,7 @@
   </head>
 
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/tweets">
-          <img src="/assets/logo.png" width="50" height="50">
-        </a>
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <%= link_to "Home", tweets_path, class:"navbar-item" %>
-        </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <% if user_signed_in? %>
-              <div class="buttons">
-                <%= link_to "Log Out", destroy_user_session_path, class:"button is-danger", :method => :delete %>
-              </div>
-            <% else %>
-              <div class="buttons">
-                <%= link_to "Sign up", new_user_registration_path, class:"button is-info" %>
-                <%= link_to "Log in", new_user_session_path, class:"button is-info is-outlined" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <%= render './layouts/nav' %>
     <div style="display: flex;">
       <div style="margin-top: 1.5%; float: left; width: 25%; padding-right: 1%; padding-left: 1%">
         <% unless current_user.nil? %>
