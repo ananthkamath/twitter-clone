@@ -1,8 +1,11 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_current_profile
 
   def show
+    @user = @profile.user
+    @tweets = @user.tweets.all.order('created_at DESC')
   end
 
   def new

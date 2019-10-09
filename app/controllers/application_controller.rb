@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  def set_profile
-    @profile = current_user.profile
+  def set_current_profile
+    @current_user_profile = current_user.profile
   end
 end

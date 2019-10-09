@@ -1,13 +1,9 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_profile
+  before_action :set_current_profile
 
   def home
-    @tweets = current_user.tweets.all.order('created_at DESC')
-  end
-
-  def profile
-    @tweets = current_user.tweets.all.order('created_at DESC')
+    @tweets = Tweet.all.order('created_at DESC')
   end
 
   def explore

@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :set_profile
+  before_action :set_current_profile
 
   # GET /tweets
   # GET /tweets.json

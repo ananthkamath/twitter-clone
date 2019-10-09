@@ -10,13 +10,15 @@
     </a>
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <%= link_to "Home", home_path, class:"navbar-item" %>
-      <%= link_to "Profile", user_profile_path, class:"navbar-item" %>
-      <%= link_to "Explore", home_path, class:"navbar-item" %>
-      <%= link_to "Notifications", home_path, class:"navbar-item" %>
-      <%= link_to "Messages", home_path, class:"navbar-item" %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="navbar-start">
+        <%= link_to "Home", home_path, class:"navbar-item" %>
+        <%= link_to "Profile", profile_path(current_user), class:"navbar-item" %>
+        <%= link_to "Explore", home_path, class:"navbar-item" %>
+        <%= link_to "Notifications", home_path, class:"navbar-item" %>
+        <%= link_to "Messages", home_path, class:"navbar-item" %>
+      </div>
+    <% end %>
     <div class="navbar-end">
       <div class="navbar-item">
         <% if user_signed_in? %>
