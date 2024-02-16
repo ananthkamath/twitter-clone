@@ -35,7 +35,8 @@ docker-compose up
 #### 4. Run the migrations
 
 ```
-docker exec -it twitter-clone_app_1 bundle exec rake db:migrate
+docker exec -it twitter-clone-app-1 bundle exec rake db:create
+docker exec -it twitter-clone-app-1 bundle exec rake db:migrate
 ```
 
 ## To Access The App On Local
