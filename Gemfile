@@ -38,7 +38,7 @@ group :development, :test do
   # http://jessehouse.com/blog/2019/06/19/actionview-template-error-wrong-number-of-arguments-given-2/
   gem 'rspec-rails'
   # Use Should Matchers for testing helpers
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '>= 6.2.0'
   # Use Factory Bot for generating random test data
   gem 'factory_bot_rails'
   # Use Faker to generate fake data for tests
