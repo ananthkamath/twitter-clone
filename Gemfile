@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Devise is a flexible authentication solution for Rails based on Warden
-gem 'devise'
+gem 'devise', '>= 4.9.4'
 
 # A modern CSS framework based on Flexbox
 gem "bulma-rails", "~> 0.7.5"
