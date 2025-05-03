@@ -36,7 +36,7 @@ gem "bulma-rails", "~> 0.7.5"
 group :development, :test do
   # Use RSpec for specs, using dev version of RSpec because of number of arguement error more details below
   # http://jessehouse.com/blog/2019/06/19/actionview-template-error-wrong-number-of-arguments-given-2/
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 8.0.0'
   # Use Should Matchers for testing helpers
   gem 'shoulda-matchers'
   # Use Factory Bot for generating random test data
