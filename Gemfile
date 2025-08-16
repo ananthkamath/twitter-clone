@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 7.1.5', '>= 7.1.5.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -44,7 +44,7 @@ group :development, :test do
   # Use Faker to generate fake data for tests
   gem 'faker'
   # Database cleaner to clear database after you run rspec
-  gem 'database_cleaner'
+  gem 'database_cleaner', '>= 2.1.0'
   # A runtime developer console and IRB alternative with powerful introspection capabilities
   gem "pry"
 end
