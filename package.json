@@ -2,10 +2,10 @@
   "name": "twitter_clone",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0-alpha",
+    "@rails/actioncable": "8.1.400",
     "@rails/actiontext": "^6.0.0",
-    "@rails/activestorage": "^6.0.0-alpha",
-    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/activestorage": "6.1.710",
+    "@rails/ujs": "6.1.710",
     "@rails/webpacker": "5.4.4",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
