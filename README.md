@@ -1,4 +1,4 @@
-# Twitter-Clone
+# Twitter Clone
 
 A Twitter like app built using Ruby On Rails.
 
